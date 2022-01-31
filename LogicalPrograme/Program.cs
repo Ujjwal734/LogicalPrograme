@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using LogicalPrograme;
 Console.WriteLine("Hello, Welcome to Logical Programe...! ");
-Console.WriteLine("1. Fibonaccci Series \n2. Perfect Number \n3. Prime Number \n4. Exit");
+Console.WriteLine("1. Fibonaccci Series \n2. Perfect Number \n3. Prime Number \n4. Reverse Number \n5. Exit");
 int option = Convert.ToInt32(Console.ReadLine());
 bool flag = true;
 while(true)
@@ -26,6 +26,11 @@ while(true)
             prime.Prim();
             break;
         case 4:
+            Reverse reverse = new Reverse();
+            Console.WriteLine("Enter a number To print its reverse...");
+            reverse.Series();
+            break;
+        case 5:
             flag = false;
             break;
     }
