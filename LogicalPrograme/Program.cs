@@ -1,13 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using LogicalPrograme;
 Console.WriteLine("Hello, Welcome to Logical Programe...! ");
-Console.WriteLine("1. Fibonaccci Series \n2. Perfect Number \n3. Prime Number \n4. Reverse Number \n5. Exit");
+
 int option = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Press S to start and N to stop ");
+char ch = Convert.ToChar(Console.ReadLine());
 bool flag = true;
-while(true)
+while(ch != 'N')
 {
-    
-    switch(option)
+    Console.WriteLine("1. Fibonaccci Series \n2. Perfect Number \n3. Prime Number \n4. Reverse Number \n5. Coupan Number");
+    switch (option)
     {
         case 1:
             FibonacSeries fibonacSeries = new FibonacSeries();
@@ -31,7 +33,13 @@ while(true)
             reverse.Series();
             break;
         case 5:
-            flag = false;
+            Coupan coupan = new Coupan();
+            coupan.Code();
+            break;
+        default:
+            Console.WriteLine("Enter valid given option :-");
             break;
     }
+    Console.WriteLine("please enter N to stop your programe or press any key to do programe...!");
+    ch = Convert.ToChar(Console.ReadLine());
 }
