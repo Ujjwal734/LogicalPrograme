@@ -1,14 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-using LogicalPrograme;
-Console.WriteLine("Hello, Welcome to Logical Programe...! ");
+﻿using LogicalPrograme;
 
+Console.WriteLine("Hello, Welcome to Logical Programe...! ");
+Console.WriteLine("1. Fibonaccci Series \n2. Perfect Number \n3. Prime Number \n4. Reverse Number \n5. Coupan Number \n6. Use Stopwatch");
 int option = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Press S to start and N to stop ");
 char ch = Convert.ToChar(Console.ReadLine());
 bool flag = true;
 while(ch != 'N')
 {
-    Console.WriteLine("1. Fibonaccci Series \n2. Perfect Number \n3. Prime Number \n4. Reverse Number \n5. Coupan Number");
     switch (option)
     {
         case 1:
@@ -35,6 +34,15 @@ while(ch != 'N')
         case 5:
             Coupan coupan = new Coupan();
             coupan.Code();
+            break;
+        case 6:
+            CustomStopwatch customstopwatch = new CustomStopwatch();
+            customstopwatch.Start();
+            Console.WriteLine("Enter after how much second you want to stop ");
+            int tie = Convert.ToInt32(Console.ReadLine()); 
+            Thread.Sleep(tie*1000);
+            customstopwatch.Stop();
+            Console.WriteLine("Stopwatch elapsed: {0}, StartAt: {1}, EndAt: {2}", customstopwatch.ElapsedMilliseconds, customstopwatch.StartAt.Value, customstopwatch.EndAt.Value);
             break;
         default:
             Console.WriteLine("Enter valid given option :-");
